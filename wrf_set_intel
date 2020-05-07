@@ -1,0 +1,26 @@
+# .bashrc file
+#--Module load
+module purge
+module load intel/14.0.3
+module load intelmpi/2017.0.098
+module list
+
+#--Defining options
+export WRFIO_NCD_LARGE_FILE_SUPPORT=1
+export NETCDF4=1
+export WRF_EM_CORE=1
+export WRF_CHEM=1
+export WRF_KPP=0
+echo 'WRF Chem =='
+echo $WRF_CHEM
+
+#--Defining paths
+export WRF_DIR=$PWD
+export NETCDF=/pf/b/b380910/libs/netcdf_all-intel
+export LD_LIBRARY_PATH=/pf/b/b380910/libs/netcdf_all-intel/lib/
+export HDF5=/sw/rhel6-x64/hdf5/hdf5-1.8.14-intel14
+export PHDF5=/sw/rhel6-x64/hdf5/hdf5-1.8.18-parallel-impi2017-intel14
+export PNETCDF=/sw/rhel6-x64/netcdf/parallel_netcdf-1.6.1-impi2017-intel14
+export JASPERLIB=/pf/b/b380910/libs/grib2/lib
+export JASPERINC=/pf/b/b380910/libs/grib2/include
+echo 'Ready for ./configure'
